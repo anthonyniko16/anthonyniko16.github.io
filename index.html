@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  <div class="container">
+
+    <h1>The weather today in <span id="titleCity">your city</span></h1>
+
+    <form id="searchForm" class="search-form">
+      <div class="input-wrapper">
+        <input type="text" id="cityInput" placeholder="Search a city..." autocomplete="off" />
+        <ul id="suggestions" class="suggestions hidden"></ul>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+
+    <p id="errorMsg" class="error hidden"></p>
+
+    <div id="loading" class="loading hidden">Loading weather...</div>
+
+    <div id="currentWeather" class="current-card hidden">
+      <h2 id="cityName"></h2>
+      <p id="dateNow" class="date"></p>
+
+      <div class="current-main">
+        <span id="weatherIcon" class="icon-big"></span>
+        <span id="temp" class="temp-big"></span>
+      </div>
+
+      <p id="condition" class="condition"></p>
+
+      <div class="details-grid">
+        <div class="detail">
+          <span class="detail-label">Feels like</span>
+          <span id="feelsLike" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Humidity</span>
+          <span id="humidity" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Wind</span>
+          <span id="wind" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">High / Low</span>
+          <span id="highLow" class="detail-value"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="forecast" class="forecast hidden"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

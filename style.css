@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  color: #222;
+  transition: background 0.6s ease;
+
+  background: linear-gradient(180deg, #6EC6FF 0%, #B3E5FC 100%);
+}
+
+body.sunny {
+  background: linear-gradient(180deg, #FFB347 0%, #FFD97D 100%);
+}
+
+body.cloudy {
+  background: linear-gradient(180deg, #90A4AE 0%, #CFD8DC 100%);
+}
+
+body.rain {
+  background: linear-gradient(180deg, #37474F 0%, #607D8B 100%);
+  color: #fff;
+}
+
+body.snow {
+  background: linear-gradient(180deg, #B3E5FC 0%, #ECEFF1 100%);
+}
+
+body.storm {
+  background: linear-gradient(180deg, #263238 0%, #455A64 100%);
+  color: #fff;
+}
+
+body.night {
+  background: linear-gradient(180deg, #0D1B2A 0%, #1B263B 100%);
+  color: #fff;
+}
+
+body.dark-mode {
+  background: #121212 !important;
+  color: #eee !important;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: white;
+  color: #222;
+  border-radius: 8px;
+  list-style: none;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  text-align: left;
+}
+
+.suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.suggestions li:hover,
+.suggestions li:focus {
+  background: #e3f2fd;
+}
+
+.search-form button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #1565C0;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background: #0D47A1;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.15);
+  color: #b00020;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.loading {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.current-card {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 25px 20px;
+  backdrop-filter: blur(6px);
+  margin-bottom: 20px;
+}
+
+.date {
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.current-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.icon-big {
+  font-size: 3rem;
+}
+
+.temp-big {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.condition {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+}
+
+.detail {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.detail-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.forecast-day {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 10px 6px;
+  flex: 1;
+  text-align: center;
+}
+
+.forecast-day .day-name {
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.forecast-day .day-icon {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.forecast-day .day-temps {
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 4px;
+}
+
+@media (max-width: 400px) {
+  .forecast {
+    flex-wrap: wrap;
+  }
+  .forecast-day {
+    flex: 1 1 30%;
+  }
+}
